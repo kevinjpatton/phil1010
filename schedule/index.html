@@ -1,0 +1,90 @@
+---
+layout: default
+title: Schedule
+---
+
+<header class="mb-16 mt-12 text-center md:text-left">
+    <h1 class="font-serif text-5xl md:text-6xl mb-6 text-obsidian">Course Schedule</h1>
+    <p class="font-sans text-lg text-obsidian/60 max-w-2xl">
+        A timeline of our philosophical inquiry. Expand each phase to view required readings, assignments, and interactive modules for the week.
+    </p>
+</header>
+
+<section id="inquiry" class="mb-24">
+    <div class="space-y-4">
+        
+        <!-- Accordion Item 1 -->
+        <div class="accordion-item border border-stone p-6 cursor-pointer hover:border-sage transition-colors" onclick="toggleAccordion(this)">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-6">
+                    <span class="font-sans text-xs uppercase tracking-widest text-sage">Phase I</span>
+                    <h3 class="font-serif text-xl md:text-2xl text-obsidian">Is there an objective purpose?</h3>
+                </div>
+                <svg class="accordion-icon w-6 h-6 text-obsidian" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"></path></svg>
+            </div>
+            <div class="accordion-content">
+                <div class="pt-6 mt-6 border-t border-stone/50 font-sans text-obsidian/80">
+                    <ul class="space-y-4 text-sm md:text-base">
+                        <li class="flex gap-3"><span class="text-sage">▸</span> <strong>Reading:</strong> Aristotle, <em>Nicomachean Ethics</em> (Book I)</li>
+                        <li class="flex gap-3"><span class="text-sage">▸</span> <strong>Reading:</strong> Thomas Aquinas, <em>Summa Theologica</em> (Excerpts)</li>
+                        <li class="flex gap-3"><span class="text-sage">▸</span> <strong>Interactive:</strong> The Teleology Simulator</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="accordion-item border border-stone p-6 cursor-pointer hover:border-sage transition-colors" onclick="toggleAccordion(this)">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-6">
+                    <span class="font-sans text-xs uppercase tracking-widest text-sage">Phase II</span>
+                    <h3 class="font-serif text-xl md:text-2xl text-obsidian">The collapse of meaning.</h3>
+                </div>
+                <svg class="accordion-icon w-6 h-6 text-obsidian" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"></path></svg>
+            </div>
+            <div class="accordion-content">
+                <div class="pt-6 mt-6 border-t border-stone/50 font-sans text-obsidian/80">
+                    <ul class="space-y-4 text-sm md:text-base">
+                        <li class="flex gap-3"><span class="text-sage">▸</span> <strong>Reading:</strong> Friedrich Nietzsche, <em>The Gay Science</em> (The Madman)</li>
+                        <li class="flex gap-3"><span class="text-sage">▸</span> <strong>Reading:</strong> Arthur Schopenhauer, <em>On the Suffering of the World</em></li>
+                        <li class="flex gap-3"><span class="text-sage">▸</span> <strong>Task:</strong> Response Paper 1 Due</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Item 3 -->
+        <div class="accordion-item border border-stone p-6 cursor-pointer hover:border-sage transition-colors" onclick="toggleAccordion(this)">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-6">
+                    <span class="font-sans text-xs uppercase tracking-widest text-sage">Phase III</span>
+                    <h3 class="font-serif text-xl md:text-2xl text-obsidian">Radical freedom & the Absurd.</h3>
+                </div>
+                <svg class="accordion-icon w-6 h-6 text-obsidian" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"></path></svg>
+            </div>
+            <div class="accordion-content">
+                <div class="pt-6 mt-6 border-t border-stone/50 font-sans text-obsidian/80">
+                    <ul class="space-y-4 text-sm md:text-base">
+                        <li class="flex gap-3"><span class="text-sage">▸</span> <strong>Reading:</strong> Jean-Paul Sartre, <em>Existentialism is a Humanism</em></li>
+                        <li class="flex gap-3"><span class="text-sage">▸</span> <strong>Reading:</strong> Albert Camus, <em>The Myth of Sisyphus</em></li>
+                        <li class="flex gap-3"><span class="text-sage">▸</span> <strong>Interactive:</strong> The Sisyphus Thought Experiment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Accordion Script -->
+<script>
+    function toggleAccordion(element) {
+        const isOpen = element.classList.contains('open');
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.classList.remove('open');
+        });
+        if (!isOpen) {
+            element.classList.add('open');
+        }
+    }
+</script>
