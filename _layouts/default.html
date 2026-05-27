@@ -37,18 +37,17 @@
 <body class="font-sans antialiased min-h-screen flex flex-col selection:bg-obsidian selection:text-parchment">
 
     <!-- Minimalist Navigation (Mix-blend keeps it visible on light and dark backgrounds) -->
-    <nav class="w-full py-8 px-6 md:px-12 flex justify-between items-center z-50 mix-blend-difference text-parchment">
+    <nav class="fixed top-0 left-0 w-full py-6 px-6 md:px-12 flex justify-between items-center z-50 bg-parchment text-obsidian border-b border-stone shadow-sm">
         <div class="font-serif text-2xl tracking-widest flex items-center gap-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><line x1="12" y1="2" x2="12" y2="22"></line></svg>
             PHIL 1010
         </div>
         <div class="hidden md:flex gap-8 font-sans text-xs uppercase tracking-[0.2em] font-medium">
             <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Syllabus</a>
-            <a href="{{ '/schedule.html' | relative_url }}" class="nav-link {% if page.url == '/schedule.html' %}active{% endif %}">Schedule</a>
-            <a href="{{ '/resources.html' | relative_url }}" class="nav-link {% if page.url == '/resources.html' %}active{% endif %}">Resources</a>
+            <a href="{{ '/schedule/' | relative_url }}" class="nav-link {% if page.url == '/schedule.html' %}active{% endif %}">Schedule</a>
+            <a href="{{ '/resources/' | relative_url }}" class="nav-link {% if page.url == '/resources.html' %}active{% endif %}">Resources</a>
         </div>
     </nav>
-
     <!-- Main Content -->
     <main class="flex-grow max-w-4xl mx-auto px-6 w-full pt-12 pb-24">
         {{ content }}
