@@ -1,6 +1,148 @@
 ---
-layout: 1010
-title: PHIL1010 - Home
+layout: default
+title: Meaning of Life
 ---
-<h1>Welcome to The Meaning of Life!</h1>
-<p>Well, the class anyway. We all find ourselves at one point or another wondering what everything adds up to. This sentiment manifests itself as different questions: 'why are we here?', 'what's my purpose?', 'how can I lead a fulfilling life?', or, perhaps most relevantly, 'what is the meaning of life?'. Now that you're in college, these questions are of the essence. Where will you go from here? Which skills should you develop? Which major should you choose? What should you pursue? Love? Family? Friendship? Education? Career? Fame? Fortune? Religious devotion? Service to others? Fulfillment? Happiness? What does it mean to be happy or fulfilled? In this course, we're going to set all else aside and dedicate real effort to coming to grips with these questions. Our focus will be on developing our ability to think about what we're asking and acquiring the tools necessary to assess the responses on offer.<br><br>Use the menu at the top to navigate to our syllabus, class readings, course assignments, and much more.</p>
+
+<!-- Interactive Hero Section -->
+<header class="mb-24 mt-12 text-center md:text-left">
+    <h1 class="font-serif text-5xl md:text-7xl mb-8 leading-tight text-obsidian" id="dynamic-title">
+        The Meaning <br>
+        <span class="italic text-sage" id="dynamic-subtitle">of Life.</span>
+    </h1>
+    
+    <!-- The Interactive Lens Picker -->
+    <div class="flex flex-wrap justify-center md:justify-start gap-6 font-sans text-xs uppercase tracking-[0.15em] text-obsidian/60 mb-12 border-b border-stone pb-6">
+        <span class="mr-4 text-sage hidden md:inline">View course through:</span>
+        <button onclick="changeLens('teleology')" class="lens-btn active" id="btn-teleology">Teleology</button>
+        <button onclick="changeLens('existentialism')" class="lens-btn" id="btn-existentialism">Existentialism</button>
+        <button onclick="changeLens('nihilism')" class="lens-btn" id="btn-nihilism">Nihilism</button>
+        <button onclick="changeLens('absurdism')" class="lens-btn" id="btn-absurdism">Absurdism</button>
+    </div>
+
+    <!-- Dynamic Content Area -->
+    <div id="dynamic-content" class="lens-content-fade">
+        <blockquote class="font-serif text-2xl md:text-3xl italic leading-relaxed text-obsidian border-l-2 border-sage pl-6 mb-8" id="dynamic-quote">
+            "Every art and every inquiry, and similarly every action and pursuit, is thought to aim at some good."
+        </blockquote>
+        <p class="font-sans text-lg leading-loose text-obsidian/80 max-w-2xl" id="dynamic-desc">
+            In this framework, we will explore the idea that human beings have a specific nature and an inherent purpose. We will read classical texts arguing that a meaningful life is achieved by fulfilling this natural function and aiming toward the highest good.
+        </p>
+        <div class="mt-6 text-sm font-semibold tracking-wider uppercase text-sage flex items-center gap-2" id="dynamic-author">
+            <span class="w-8 h-px bg-sage"></span> Aristotle
+        </div>
+    </div>
+</header>
+
+<!-- Course Logistics & Syllabus -->
+<section class="border-t border-obsidian/20 pt-16">
+    <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+            <h3 class="font-serif text-2xl text-obsidian mb-6">Course Logistics</h3>
+            <div class="space-y-6 font-sans text-sm text-obsidian/80">
+                <p>
+                    <strong class="text-obsidian tracking-wider uppercase text-xs block mb-1">Instructor</strong> 
+                    Dr. Kevin J. Patton<br>
+                </p>
+                <p>
+                    <strong class="text-obsidian tracking-wider uppercase text-xs block mb-1">Location</strong> 
+                    University of Nebraska at Omaha<br>
+                    Philosophy Dept.
+                </p>
+                <p>
+                    <strong class="text-obsidian tracking-wider uppercase text-xs block mb-1">Time</strong> 
+                    Mon/Wed 11:30 AM<br>
+                </p>
+                <p>
+                    <strong class="text-obsidian tracking-wider uppercase text-xs block mb-1">Office Hours</strong> 
+                    Tuesdays, 1:00 PM - 3:00 PM<br>
+                    or by appointment.
+                </p>
+            </div>
+            <a href="#" class="mt-8 inline-flex items-center gap-3 font-sans text-xs uppercase tracking-[0.2em] font-medium text-obsidian border-b border-obsidian pb-2 hover:text-sage hover:border-sage transition-colors">
+                Download PDF Syllabus <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </a>
+        </div>
+        
+        <div class="md:col-span-2 space-y-12">
+            <div>
+                <h3 class="font-serif text-2xl text-obsidian mb-4">Course Description</h3>
+                <p class="font-sans text-obsidian/80 leading-relaxed">
+                    This course invites you to examine the foundations of human existence. Is there an objective meaning to life waiting to be discovered, or is meaning something we must courageously invent for ourselves? We will navigate through teleology, nihilism, existentialism, and absurdism, reading works from Aristotle, Nietzsche, Camus, Sartre, and contemporary philosophers. 
+                </p>
+            </div>
+            <div>
+                <h3 class="font-serif text-2xl text-obsidian mb-4">Grading & Evaluation</h3>
+                <ul class="font-sans text-obsidian/80 leading-relaxed space-y-3">
+                    <li class="flex justify-between border-b border-stone pb-2"><span>Response Papers (x3)</span> <span>30%</span></li>
+                    <li class="flex justify-between border-b border-stone pb-2"><span>Midterm Examination</span> <span>25%</span></li>
+                    <li class="flex justify-between border-b border-stone pb-2"><span>"Bucket List" Final Essay</span> <span>35%</span></li>
+                    <li class="flex justify-between pb-2"><span>Seminar Participation</span> <span>10%</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Script for the Lenses -->
+<script>
+    const lenses = {
+        teleology: {
+            subtitle: "of Life.",
+            quote: "\"Every art and every inquiry, and similarly every action and pursuit, is thought to aim at some good.\"",
+            desc: "In this framework, we will explore the idea that human beings have a specific nature and an inherent purpose. We will read classical texts arguing that a meaningful life is achieved by fulfilling this natural function and aiming toward the highest good.",
+            author: "Aristotle",
+            bg: "#faf9f6",
+            text: "#0f0f0f",
+            sage: "#849286"
+        },
+        existentialism: {
+            subtitle: "is What You Make It.",
+            quote: "\"Man is condemned to be free; because once thrown into the world, he is responsible for everything he does.\"",
+            desc: "Here, we discard the notion of inherent purpose. Instead, we examine the terrifying and liberating idea that 'existence precedes essence.' You are a blank slate, and the meaning of your life is defined strictly by the choices you make and the actions you take.",
+            author: "Jean-Paul Sartre",
+            bg: "#f0f0f0",
+            text: "#111111",
+            sage: "#57534E"
+        },
+        nihilism: {
+            subtitle: "is an Illusion.",
+            quote: "\"God is dead. God remains dead. And we have killed him.\"",
+            desc: "Through this lens, we confront the abyss. We will examine the argument that all values are baseless, that reason is impotent, and that the universe is entirely indifferent to human existence. How do we continue to live when objective meaning collapses?",
+            author: "Friedrich Nietzsche",
+            bg: "#111111",
+            text: "#f0f0f0",
+            sage: "#A8A29E"
+        },
+        absurdism: {
+            subtitle: "is Absurd.",
+            quote: "\"The literal meaning of life is whatever you're doing that prevents you from killing yourself.\"",
+            desc: "We will study the tension between our human desire for meaning and the cold, silent universe that refuses to provide it. Rather than despair, we will explore how embracing this inherent absurdity allows us to live in defiant, passionate revolt.",
+            author: "Albert Camus",
+            bg: "#ece5df",
+            text: "#292524",
+            sage: "#991b1b"
+        }
+    };
+
+    function changeLens(lensKey) {
+        const data = lenses[lensKey];
+        const contentDiv = document.getElementById('dynamic-content');
+        
+        document.querySelectorAll('.lens-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`btn-${lensKey}`).classList.add('active');
+
+        document.body.style.setProperty('--theme-bg', data.bg);
+        document.body.style.setProperty('--theme-text', data.text);
+
+        contentDiv.classList.add('hidden-state');
+
+        setTimeout(() => {
+            document.getElementById('dynamic-subtitle').innerText = data.subtitle;
+            document.getElementById('dynamic-quote').innerText = data.quote;
+            document.getElementById('dynamic-desc').innerText = data.desc;
+            document.getElementById('dynamic-author').innerHTML = `<span class="w-8 h-px bg-current opacity-50"></span> ${data.author}`;
+            
+            contentDiv.classList.remove('hidden-state');
+        }, 500); 
+    }
+</script>
