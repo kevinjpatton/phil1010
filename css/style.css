@@ -1,0 +1,80 @@
+/* Custom smooth transitions for the interactive elements */
+body {
+    background-color: var(--theme-bg, #faf9f6);
+    color: var(--theme-text, #0f0f0f);
+    transition: background-color 1s ease, color 1s ease;
+}
+
+.lens-content-fade {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.lens-content-fade.hidden-state {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-in-out;
+}
+
+.accordion-content > div {
+    overflow: hidden;
+}
+
+.accordion-item.open .accordion-content {
+    grid-template-rows: 1fr;
+}
+
+.accordion-icon {
+    transition: transform 0.4s ease;
+}
+
+.accordion-item.open .accordion-icon {
+    transform: rotate(45deg);
+}
+
+/* Styling for the interactive lens buttons */
+.lens-btn {
+    position: relative;
+}
+.lens-btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 50%;
+    background-color: currentColor;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.lens-btn:hover::after, .lens-btn.active::after {
+    width: 100%;
+}
+.lens-btn.active {
+    font-weight: 600;
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    padding-bottom: 2px;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
