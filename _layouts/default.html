@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | PHIL 1010</title>
     
-    <!-- Elegant Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS Config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -31,32 +29,54 @@
         }
     </script>
 
-    <!-- Custom Styles -->
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body class="font-sans antialiased min-h-screen flex flex-col selection:bg-obsidian selection:text-parchment">
 
-    <!-- Minimalist Navigation (Mix-blend keeps it visible on light and dark backgrounds) -->
-    <nav class="fixed top-0 left-0 w-full py-6 px-6 md:px-12 flex justify-between items-center z-50 bg-parchment text-obsidian border-b border-stone shadow-sm">
-        <div class="font-serif text-2xl tracking-widest flex items-center gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><line x1="12" y1="2" x2="12" y2="22"></line></svg>
-            PHIL 1010
+    <nav class="fixed top-0 left-0 w-full z-50 bg-parchment text-obsidian border-b border-stone shadow-sm">
+        <div class="py-6 px-6 md:px-12 flex justify-between items-center">
+            <div class="font-serif text-2xl tracking-widest flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><line x1="12" y1="2" x2="12" y2="22"></line></svg>
+                PHIL 1010
+            </div>
+            
+            <div class="hidden md:flex gap-8 font-sans text-xs uppercase tracking-[0.2em] font-medium">
+                <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Syllabus</a>
+                <a href="{{ '/schedule/' | relative_url }}" class="nav-link {% if page.url == '/schedule.html' %}active{% endif %}">Schedule</a>
+                <a href="{{ '/resources/' | relative_url }}" class="nav-link {% if page.url == '/resources.html' %}active{% endif %}">Resources</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-obsidian hover:text-sage focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-        <div class="hidden md:flex gap-8 font-sans text-xs uppercase tracking-[0.2em] font-medium">
-            <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Syllabus</a>
-            <a href="{{ '/schedule/' | relative_url }}" class="nav-link {% if page.url == '/schedule.html' %}active{% endif %}">Schedule</a>
-            <a href="{{ '/resources/' | relative_url }}" class="nav-link {% if page.url == '/resources.html' %}active{% endif %}">Resources</a>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-parchment border-t border-stone shadow-inner">
+            <div class="px-6 py-4 flex flex-col gap-4 font-sans text-xs uppercase tracking-[0.2em] font-medium text-obsidian/80">
+                <a href="{{ '/' | relative_url }}" class="hover:text-sage {% if page.url == '/' %}text-obsidian font-bold{% endif %}">Syllabus</a>
+                <a href="{{ '/schedule/' | relative_url }}" class="hover:text-sage {% if page.url == '/schedule.html' %}text-obsidian font-bold{% endif %}">Schedule</a>
+                <a href="{{ '/resources/' | relative_url }}" class="hover:text-sage {% if page.url == '/resources.html' %}text-obsidian font-bold{% endif %}">Resources</a>
+            </div>
         </div>
     </nav>
-    <!-- Main Content -->
+
     <main class="flex-grow max-w-4xl mx-auto px-6 w-full pt-32 pb-24">
         {{ content }}
     </main>
 
-    <!-- Footer -->
-    <footer class="mt-auto py-12 text-center font-sans text-xs uppercase tracking-[0.2em] mix-blend-difference text-parchment opacity-40">
+    <footer class="mt-auto py-12 text-center font-sans text-xs uppercase tracking-[0.2em] text-obsidian/40">
         © 2026 Dr. Kevin J. Patton. University of Nebraska at Omaha.
     </footer>
 
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
