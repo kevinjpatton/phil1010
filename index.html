@@ -13,8 +13,8 @@ title: Meaning of Life
     <!-- The Interactive Lens Picker -->
     <div class="flex flex-wrap justify-center md:justify-start gap-6 font-sans text-xs uppercase tracking-[0.15em] text-obsidian/60 mb-12 border-b border-stone pb-6">
         <span class="mr-4 text-sage hidden md:inline">View course through:</span>
-        <button onclick="changeLens('teleology')" class="lens-btn active" id="btn-teleology">Teleology</button>
-        <button onclick="changeLens('existentialism')" class="lens-btn" id="btn-existentialism">Existentialism</button>
+        <button onclick="changeLens('objective')" class="lens-btn active" id="btn-teleology">Objectivism</button>
+        <button onclick="changeLens('subjective')" class="lens-btn" id="btn-existentialism">Subjectivism</button>
         <button onclick="changeLens('nihilism')" class="lens-btn" id="btn-nihilism">Nihilism</button>
         <button onclick="changeLens('absurdism')" class="lens-btn" id="btn-absurdism">Absurdism</button>
     </div>
@@ -86,26 +86,26 @@ title: Meaning of Life
 <!-- Interactive Script for the Lenses -->
 <script>
     const lenses = {
-        teleology: {
-            subtitle: "of Life.",
-            quote: "\"Every art and every inquiry, and similarly every action and pursuit, is thought to aim at some good.\"",
-            desc: "In this framework, we will explore the idea that human beings have a specific nature and an inherent purpose. We will read classical texts arguing that a meaningful life is achieved by fulfilling this natural function and aiming toward the highest good.",
-            author: "Aristotle",
+        objective: {
+            subtitle: "of life is objective.",
+            quote: "\"Meaningful lives are lives of active engagement in projects of worth.\"",
+            desc: "For objective views, whether or not a life is meaningful is dependent upon the standards of some external source. Such a set of standard could come from morality, God, or perhaps something else.",
+            author: "Susan Wolf",
             bg: "#faf9f6",
             text: "#0f0f0f",
             sage: "#849286"
         },
-        existentialism: {
-            subtitle: "is What You Make It.",
-            quote: "\"Man is condemned to be free; because once thrown into the world, he is responsible for everything he does.\"",
-            desc: "Here, we discard the notion of inherent purpose. Instead, we examine the terrifying and liberating idea that 'existence precedes essence.' You are a blank slate, and the meaning of your life is defined strictly by the choices you make and the actions you take.",
-            author: "Jean-Paul Sartre",
+        subjective: {
+            subtitle: "of life is up to each of us.",
+            quote: "\"The meaning of life is from within us, it is not bestowed from without, and it far exceeds in both its beauty and permanence any heaven of which men have ever dreamed or yearned for.\"",
+            desc: "On this view of the meaning of life, while there is no external authority or source for meaning indpendent from us, there is still meaning. Such meaning, however, is rooted in our desires, values, or goals that we give ourselves.",
+            author: "Richard Taylor",
             bg: "#f0f0f0",
             text: "#111111",
             sage: "#57534E"
         },
         nihilism: {
-            subtitle: "is an Illusion.",
+            subtitle: "is an illusion.",
             quote: "\"God is dead. God remains dead. And we have killed him.\"",
             desc: "Through this lens, we confront the abyss. We will examine the argument that all values are baseless, that reason is impotent, and that the universe is entirely indifferent to human existence. How do we continue to live when objective meaning collapses?",
             author: "Friedrich Nietzsche",
