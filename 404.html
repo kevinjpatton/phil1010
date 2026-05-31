@@ -1,6 +1,36 @@
 ---
-layout: 1010
-title: 404 Error
+layout: default
+title: 404 - Meaning Not Found
 ---
-<h1>Mea culpa</h1>
-<p>It looks like a link is broken. If this is class related, please contact me ASAP so that I can fix it.</p>
+
+<div class="flex flex-col items-center justify-center text-center py-20 md:py-32">
+    
+    <!-- Minimalist Icon -->
+    <div class="mb-8 text-obsidian/40">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+        </svg>
+    </div>
+
+    <!-- Existential Header -->
+    <h1 class="font-serif text-7xl md:text-9xl font-black text-obsidian mb-4 tracking-tighter">
+        404
+    </h1>
+    <h2 class="font-serif text-2xl md:text-3xl italic text-sage mb-6">
+        Meaning Not Found.
+    </h2>
+    
+    <p class="font-sans text-lg text-obsidian/80 max-w-xl mx-auto mb-12 leading-relaxed">
+        You have confronted the Absurd. The page you are looking for has no inherent purpose and does not exist in this universe. You must courageously invent a new path forward.
+    </p>
+
+    <!-- Return Button -->
+    <a href="{{ '/' | relative_url }}" class="inline-flex items-center justify-center px-8 py-3 font-sans text-xs uppercase tracking-[0.2em] font-medium text-obsidian border border-obsidian hover:bg-obsidian hover:text-parchment transition-colors gap-3">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Return to the Syllabus
+    </a>
+
+</div>
